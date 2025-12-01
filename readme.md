@@ -60,7 +60,7 @@ To use in uBlock Origin:
 2. Go to Filter lists  
 3. Under “Custom”, add:  
    ```
-   https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-tracking.txt
+   https://raw.githubusercontent.com/Koen88/be-privacy-filters/refs/heads/main/pihole/ubo/ubo-be-tracking.txt
    ```
 5. Apply changes
 
@@ -83,7 +83,7 @@ To use in uBlock Origin:
 
 Add this URL:  
 ```
-https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-cosmetic.txt
+https://raw.githubusercontent.com/Koen88/be-privacy-filters/refs/heads/main/pihole/ubo/ubo-be-cosmetic.txt
 ```
 Then apply changes.
 
