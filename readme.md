@@ -1,61 +1,123 @@
 # be-privacy-filters
 
-Opinionated Belgian privacy filter collection for Pi-hole and uBlock Origin.
-
-## Lists
-
-**Pi-hole (DNS level)**  
-- `pihole-be-hosts.txt`  
-  Extra DNS blocklist for Belgian-oriented tracking and analytics endpoints, in hosts-file format.
-
-**uBlock Origin (browser level)**  
-- `ubo-be-tracking.txt`  
-  Network filters (Adblock syntax) for Belgian sites.  
-- `ubo-be-cosmetic.txt`  
-  Cosmetic filters for hiding leftover ad placeholders and consent trash on Belgian sites.
-
-All lists are designed to complement, **not replace**, big community lists like OISD, EasyList and EasyPrivacy.
+A collection of custom blocklists and filter rules focused on Belgian websites, media platforms, tracking infrastructure, and regional advertising networks.
+These lists are intended to complement existing global filter sets (OISD, EasyPrivacy, AdGuard, StevenBlack, etc.) by covering domains and tracking endpoints that are commonly used in Belgium but are often missing from international lists.
+All filters are generated and maintained based on real network traffic analysis, Pi-hole query logs, and uBlock Origin logger data.
 
 ---
 
-## Raw URLs
+## Repository structure
 
-- Pi-hole:  
-  `https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/pihole-be-hosts.txt`
-
-- uBlock Origin – tracking:  
-  `https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo-be-tracking.txt`
-
-- uBlock Origin – cosmetic:  
-  `https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo-be-cosmetic.txt`
-
----
-
-## How to use
-
-### Pi-hole
-
-1. Go to **Group Management → Adlists**.  
-2. Add the Pi-hole URL above as a new adlist.  
-3. Assign it to the groups you want.  
-4. Run **Tools → Update Gravity** or `pihole -g` on the CLI.
-
-### uBlock Origin
-
-1. Open uBO dashboard → **Filter lists**.  
-2. Scroll to **Import…** at the bottom.  
-3. Paste the two uBO URLs (tracking + cosmetic), one per line.  
-4. Click **Apply changes**.
+be-privacy-filters/
+├── pihole/
+│   └── pihole-be-blocklist.txt
+├── ubo/
+│   ├── ubo-be-tracking.txt
+│   └── ubo-be-cosmetic.txt
+└── README.md
 
 ---
 
-## Automatic releases
+## Pi-hole blocklist (DNS level)
 
-This repository can auto-create tags and GitHub releases when you push changes to `main`.
+File: pihole/pihole-be-blocklist.txt  
+Format: hosts (0.0.0.0 domain)
 
-- Workflow file: `.github/workflows/release.yml`  
-- Tag format: `vYYYY.MM.DD-HHMM` (for example `v2025.12.01-2359`).
+This list blocks Belgian-focused tracking and advertising domains, including:
 
-You do **not** need to do anything manually: just commit and push; the workflow will:
-- create (or move) a tag for the current date-time, and
-- create a GitHub Release that bundles the current versions of the three lists.
+- DPG Media (HLN, Nieuwsblad, HBvL, GVA, VTM)
+- Mediahuis tracking
+- VRT and VRT MAX analytics
+- Streamz, RTL Play, VTM GO measurement domains
+- Banking telemetry (Belfius, Argenta)
+- Contentsquare, Kaching, Pexi, Smartocto, Refinery89
+- Various third-party trackers heavily used in Belgium
+
+To use in Pi-hole:
+
+1. Open Pi-hole admin panel  
+2. Group Management → Adlists  
+3. Add this URL:  
+   https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/pihole/pihole-be-blocklist.txt  
+4. Save → Update Gravity
+
+---
+
+## uBlock Origin network filters
+
+File: ubo/ubo-be-tracking.txt  
+Type: network filtering rules (Adblock/uBO syntax)
+
+Blocks:
+
+- Belgian tracking endpoints
+- analytics APIs
+- measurement beacons
+- consent and telemetry scripts
+- ad-delivery CDNs
+- profiling and engagement frameworks
+
+To use in uBlock Origin:
+
+1. Open Dashboard  
+2. Go to Filter lists  
+3. Under “Custom”, add:  
+   https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-tracking.txt  
+4. Apply changes
+
+---
+
+## uBlock Origin cosmetic filters
+
+File: ubo/ubo-be-cosmetic.txt  
+Type: cosmetic (element hiding) rules
+
+Hides visible ad placeholders and UI elements on Belgian media sites:
+
+- HLN  
+- Nieuwsblad / HBvL / GVA  
+- De Standaard  
+- VRT / VRT MAX  
+- Streamz  
+- RTL / RTLplay  
+- Voetbalkrant  
+
+To use in uBlock Origin:
+
+Add this URL:  
+https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-cosmetic.txt  
+Then apply changes.
+
+---
+
+## Project aims
+
+- Provide improved coverage for Belgian tracking where global lists fall short  
+- Reduce analytics, tracking, profiling and UX-measurement scripts  
+- Maintain site functionality (no aggressive breakage)  
+- Keep filters simple, stable, and easy to maintain  
+- Designed to work alongside major lists (OISD, EasyPrivacy, AdGuard, etc.)
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+You can help by submitting:
+
+- uBlock Origin log samples  
+- Pi-hole query logs  
+- new Belgian tracking domains  
+- cosmetic filter improvements  
+- false positive reports  
+
+Please open an issue or submit a pull request.
+
+---
+
+## Status
+
+Actively maintained.  
+Stable for daily use.  
+Compatible with Pi-hole, AdGuard Home and uBlock Origin.
