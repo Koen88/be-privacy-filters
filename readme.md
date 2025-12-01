@@ -35,7 +35,7 @@ To use in Pi-hole:
 1. Open Pi-hole admin panel  
 2. Group Management → Adlists  
 3. Add this URL:  
-   https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/pihole/pihole-be-blocklist.txt  
+   ```https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/pihole/pihole-be-blocklist.txt```
 4. Save → Update Gravity
 
 ---
@@ -59,7 +59,7 @@ To use in uBlock Origin:
 1. Open Dashboard  
 2. Go to Filter lists  
 3. Under “Custom”, add:  
-   https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-tracking.txt  
+   ```https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-tracking.txt```
 4. Apply changes
 
 ---
@@ -82,7 +82,7 @@ Hides visible ad placeholders and UI elements on Belgian media sites:
 To use in uBlock Origin:
 
 Add this URL:  
-https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-cosmetic.txt  
+```https://raw.githubusercontent.com/Koen88/be-privacy-filters/main/ubo/ubo-be-cosmetic.txt```
 Then apply changes.
 
 ---
