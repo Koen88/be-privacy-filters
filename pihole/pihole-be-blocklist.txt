@@ -1,0 +1,77 @@
+# pihole-be-blocklist.txt
+# Extra Belgische tracking- en advertentiedomeinen voor Pi-hole
+# Formaat: hosts-file (0.0.0.0 <domein>)
+
+########
+# DPG Media / HLN / HBvL / Nieuwsblad / GVA / HLN-app
+########
+0.0.0.0 advertising-cdn.dpgmedia.cloud
+0.0.0.0 advertising-module.api.dpgmedia.cloud
+0.0.0.0 sp.dpgmedia.net
+0.0.0.0 t.hln.be
+0.0.0.0 shared.mediahuis.be     # veel gedeeld tussen Mediahuis-sites
+
+########
+# Pexi / engagement widgets (DPG, nieuwsbrieven, popups)
+########
+0.0.0.0 pexi.nl
+0.0.0.0 dash.pexi.nl
+0.0.0.0 dpg.pexi.nl
+0.0.0.0 static.pexi.nl
+0.0.0.0 widgets.pexi.nl
+
+########
+# Kaching – performance / engagement (kan je missen)
+########
+0.0.0.0 cdn.kaching.eu.com
+0.0.0.0 log.kaching.eu.com
+
+########
+# VRT / VRT MAX – tracking, surveys
+########
+0.0.0.0 c.vrt.be
+0.0.0.0 cmp-sp.vrt.be
+0.0.0.0 znetjitvxsol8c1x7-vrt.siteintercept.qualtrics.com
+0.0.0.0 na-vrt.siteintercept.qualtrics.com
+
+########
+# Banken – puur analytics (functioneel meestal niet kritisch)
+########
+0.0.0.0 smetrics.argenta.be
+0.0.0.0 smtx.belfius.be
+0.0.0.0 agentaspaarbank.tt.omtrdc.net
+
+########
+# Streaming / TV
+########
+0.0.0.0 t.streamz.be
+0.0.0.0 sst.vtm.be   # VTM tracking / statistieken
+
+########
+# Derde partijen – advertentie / tracking / A/B-test
+########
+0.0.0.0 tags.refinery89.com
+0.0.0.0 tentacles.smartocto.com
+0.0.0.0 t.contentsquare.net
+0.0.0.0 dev.visualwebsiteoptimizer.com
+0.0.0.0 dpm.demdex.net
+0.0.0.0 bat.bing.com
+0.0.0.0 analytics.tiktok.com
+0.0.0.0 rum-static.pingdom.net
+0.0.0.0 static.cloudflareinsights.com
+0.0.0.0 snap.licdn.com
+0.0.0.0 js.appboycdn.com       # Braze marketing
+0.0.0.0 aswpsdkus.com          # Samsung push sdk / tracking
+
+########
+# Litix (video / measurement)
+########
+0.0.0.0 6hlqlfb792a08c53grgjogo9c.litix.io
+0.0.0.0 ulj2m26mv65ff06mjk2g9umq4.litix.io
+
+########
+# Algemeen "noisy" tracking
+########
+0.0.0.0 tentacles.smartocto.com
+0.0.0.0 contentsquare.net
+0.0.0.0 csp.withgoogle.com
