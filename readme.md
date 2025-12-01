@@ -4,10 +4,8 @@ A collection of custom blocklists and filter rules focused on Belgian websites, 
 These lists are intended to complement existing global filter sets (OISD, EasyPrivacy, AdGuard, StevenBlack, etc.) by covering domains and tracking endpoints that are commonly used in Belgium but are often missing from international lists.
 All filters are generated and maintained based on real network traffic analysis, Pi-hole query logs, and uBlock Origin logger data.
 
----
-
 ## Repository structure
-
+```
 be-privacy-filters/
 ├── pihole/
 │   └── pihole-be-blocklist.txt
@@ -15,8 +13,7 @@ be-privacy-filters/
 │   ├── ubo-be-tracking.txt
 │   └── ubo-be-cosmetic.txt
 └── README.md
-
----
+```
 
 ## Pi-hole blocklist (DNS level)
 
